@@ -12,6 +12,7 @@ Loginwindow::Loginwindow(QWidget *parent)
 }
 void Loginwindow::on_pushButtonLogin_clicked()
 {
+    ui->labelError->hide();
     QString username = ui->lineEditUsername->text();
     QString password = ui->lineEditPassword->text();
     bool isLibrarian = ui->radioButtonLibrarian->isChecked();
