@@ -17,7 +17,13 @@ public:
     explicit Loginwindow(QWidget *parent = nullptr);
     ~Loginwindow() override;
 
+private slots:
+    void on_pushButtonLogin_clicked();
+
+    void on_checkBoxShowPassword_toggled(bool checked);
+
 private:
+
     Ui::Loginwindow *ui;
 };
 #endif // LOGINWINDOW_H
