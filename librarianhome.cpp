@@ -32,8 +32,11 @@ void LibrarianHome::on_pushButtonLogout_clicked()
 
     if (reply == QMessageBox::Yes)
     {
-        Loginwindow *login = new Loginwindow();
-        login->show();
+        if (parentWidget())
+        {
+            parentWidget()->show();
+        }
+
         this->close();
     }
 }
