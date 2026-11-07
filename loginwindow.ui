@@ -128,7 +128,7 @@
      <string>show password</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonlogin">
+   <widget class="QPushButton" name="pushButtonLogin">
     <property name="geometry">
      <rect>
       <x>160</x>

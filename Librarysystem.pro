@@ -7,17 +7,19 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    librarianhome.cpp \
     librarydata.cpp \
     main.cpp \
     loginwindow.cpp
 
 HEADERS += \
+    librarianhome.h \
     librarydata.h \
     loginwindow.h
 
 FORMS += \
-    loginwindow.ui
-
+    loginwindow.ui \
+    LibrarianHome.ui
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
