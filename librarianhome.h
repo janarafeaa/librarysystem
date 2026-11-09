@@ -1,3 +1,4 @@
+
 #ifndef LIBRARIANHOME_H
 #define LIBRARIANHOME_H
 
@@ -19,6 +20,7 @@ public:
 
 private slots:
     void on_pushButtonLogout_clicked();
+    void on_actionLogout_triggered(bool checked);
 
 private:
     Ui::MainWindow *ui;
