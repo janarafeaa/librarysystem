@@ -21,6 +21,7 @@ public:
 private slots:
     void on_pushButtonLogout_clicked();
     void on_actionLogout_triggered(bool checked);
+    void on_actionAdd_New_Book_triggered(bool checked);
 
 private:
     Ui::MainWindow *ui;

@@ -1,7 +1,9 @@
+
 #include "librarianhome.h"
 #include "ui_LibrarianHome.h"
 #include "librarydata.h"
 #include "loginwindow.h"
+#include "addbookwindow.h"
 
 #include <QMessageBox>
 
@@ -48,4 +50,22 @@ void LibrarianHome::on_pushButtonLogout_clicked()
 void LibrarianHome::on_actionLogout_triggered(bool checked)
 {
     on_pushButtonLogout_clicked();
+}
+
+void LibrarianHome::on_actionAdd_New_Book_triggered(bool checked)
+{
+    ui->statusbar->showMessage("Opening Add Book...", 2000);
+
+    int previousBookCount = books.size();
+
+    AddBookWindow dialog(this);
+    dialog.exec();
+
+    if (books.size() > previousBookCount)
+    {
+        ui->labelBookCount->setText(
+            "Books in Library: " + QString::number(books.size()));
+
+        ui->statusbar->showMessage("Book added successfully", 3000);
+    }
 }
