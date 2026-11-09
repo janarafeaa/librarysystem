@@ -2,6 +2,8 @@
 #include "ui_loginwindow.h"
 #include "librarydata.h"
 #include "librarianhome.h"
+#include "searchwindow.h"
+
 #include <QMessageBox>
 
 Loginwindow::Loginwindow(QWidget *parent)
@@ -22,7 +24,8 @@ void Loginwindow::on_pushButtonLogin_clicked()
     bool isLibrarian = ui->radioButtonLibrarian->isChecked();
     bool isMember = ui->radioButtonMember->isChecked();
 
-    if (username.isEmpty() || password.isEmpty() || (!isLibrarian && !isMember))
+    if (username.isEmpty() || password.isEmpty() ||
+        (!isLibrarian && !isMember))
     {
         QMessageBox::critical(this, "Login Error",
                               "Please enter username, password and select a role.");
@@ -47,8 +50,12 @@ void Loginwindow::on_pushButtonLogin_clicked()
             }
             else
             {
-                QMessageBox::information(this, "Member Login",
-                                         "Member home will be connected in the next feature.");
+                SearchWindow dialog(this);
+                dialog.setValues(username, false);
+
+                this->hide();
+                dialog.exec();
+                this->show();
             }
 
             return;

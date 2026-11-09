@@ -1,9 +1,9 @@
-
 #include "librarianhome.h"
 #include "ui_LibrarianHome.h"
 #include "librarydata.h"
 #include "loginwindow.h"
 #include "addbookwindow.h"
+#include "searchwindow.h"
 
 #include <QMessageBox>
 
@@ -68,4 +68,13 @@ void LibrarianHome::on_actionAdd_New_Book_triggered(bool checked)
 
         ui->statusbar->showMessage("Book added successfully", 3000);
     }
+}
+
+void LibrarianHome::on_actionSearch_Books_triggered(bool checked)
+{
+    ui->statusbar->showMessage("Opening Search Books...", 2000);
+
+    SearchWindow dialog(this);
+    dialog.setValues(ui->labelWelcome->text().remove("Welcome, ").remove("!"), true);
+    dialog.exec();
 }
