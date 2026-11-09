@@ -11,18 +11,21 @@ SOURCES += \
     librarydata.cpp \
     main.cpp \
     loginwindow.cpp \
-    addbookwindow.cpp
+    addbookwindow.cpp \
+    searchwindow.cpp
 
 HEADERS += \
     librarianhome.h \
     librarydata.h \
     loginwindow.h \
-    addbookwindow.h
+    addbookwindow.h \
+    searchwindow.h
 
 FORMS += \
     loginwindow.ui \
     LibrarianHome.ui \
-    AddBookWindow.ui
+    AddBookWindow.ui \
+    searchwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
